@@ -1,16 +1,52 @@
-# React + Vite
+# React Jobs Contact
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Pequeña aplicación React que demuestra enrutado con React Router, un contexto para datos de contacto y una sección de ofertas de trabajo que obtiene datos de una API local.
 
-Currently, two official plugins are available:
+## Resumen
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este proyecto usa Vite + React y está organizado en páginas y componentes. Permite navegar entre Home, About, Products, Contact (form y info) y Jobs (lista y detalle). El formulario de contacto guarda los datos en un Contexto React y muestra la información en otra ruta.
 
-## React Compiler
+## Requisitos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Node.js (>= 18 recomendado)
+- npm
 
-## Expanding the ESLint configuration
+## Instalación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clona el repositorio
+
+2. Instala dependencias
+
+```bash
+npm install
+```
+
+## Scripts disponibles
+
+- `npm run dev` - Ejecuta el servidor de desarrollo (Vite).
+- `npm run build` - Genera la versión de producción.
+- `npm run preview` - Previsualiza la build de producción.
+- `npm run lint` - Ejecuta ESLint sobre el proyecto.
+
+Ejemplo rápido:
+
+```bash
+npm run dev
+```
+
+Abre http://localhost:5173 (o el puerto que indique Vite) en tu navegador.
+
+## Estructura del proyecto
+
+- `index.html` - Entrada HTML.
+- `src/main.jsx` - Punto de entrada React, envuelve la app con `ContactProvider`.
+- `src/App.jsx` - Define las rutas con `react-router-dom`.
+- `src/pages/` - Páginas: `Home`, `About`, `Products`, `Contact`, `Jobs`.
+- `src/components/` - Componentes pequeños: `ContactForm`, `ContactInfo`, `Navbar`, `JobDetails`, `Error`, `NotFound`.
+- `src/context/ContactContext.jsx` - Contexto para almacenar y compartir los datos de contacto.
+- `src/assets/data.json` - Datos de ejemplo para jobs (además el loader de Jobs espera una API en `http://localhost:5200/jobs`).
+
+
+## Licencia
+
+Repositorio con licencia en el archivo `LICENSE`.
